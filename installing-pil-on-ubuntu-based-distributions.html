@@ -25,9 +25,10 @@
         <header id="banner" class="body">
             <h1 class="site-name">
                 <a href="/">
-                    Fuzzing the Web <strong></strong>
+                    Fuzzing the Web
                 </a>
             </h1>
+            <h2 class="site-subtitle">Javi Manzano's blog</h2>
         </header><!-- /#banner -->
 
         <div id="navigation" class="navbar row">
@@ -43,29 +44,26 @@
         </div>
 
 <section id="content" class="body">
+    <header>
+        <h2 class="entry-title">
+            <a 
+                href="/installing-pil-on-ubuntu-based-distributions.html"
+                rel="bookmark"
+                title="Permalink to Installing PIL on Ubuntu based distributions">
+                Installing PIL on Ubuntu based distributions
+            </a>
+        </h2>
+    </header>
+    <footer class="post-info">
+        <abbr
+            class="published"
+            title="2013-09-26T21:09:00+01:00"
+            >
+            Thu 26 September 2013
+        </abbr>
+    </footer><!-- /.post-info -->
 
-    <div class="row">
-        <div class="eleven columns">
-            <header>
-                <h2 class="entry-title">
-                    <a 
-                        href="/installing-pil-on-ubuntu-based-distributions.html"
-                        rel="bookmark"
-                        title="Permalink to Installing PIL on Ubuntu based distributions">
-                        Installing PIL on Ubuntu based distributions
-                    </a>
-                </h2>
-            </header>
-            <footer class="post-info">
-                <abbr
-                    class="published"
-                    title="2013-09-26T21:09:00+01:00"
-                    >
-                    Thu 26 September 2013
-                </abbr>
-            </footer><!-- /.post-info -->
-      
-            <div class="entry-content"><p>Today I've been trying to run <a href="https://npmjs.org/package/grunt-glue">grunt-glue</a> in my Elementary OS and after trying to understand why it wasn't running, I realised the JPEG/ZLIB support weren't working.</p>
+    <div class="entry-content"><p>Today I've been trying to run <a href="https://npmjs.org/package/grunt-glue">grunt-glue</a> in my Elementary OS and after trying to understand why it wasn't running, I realised the JPEG/ZLIB support weren't working.</p>
 <p>It usually happens when you install PIL via pip. To fix the issue, do the following:</p>
 <p>Uninstall PIL from your virtualenv - please, use <a href="https://pypi.python.org/pypi/virtualenv">virtualenv</a>.</p>
 <div class="highlight"><pre>pip uninstall PIL
@@ -109,9 +107,7 @@ platform      linux2 2.7.3 (default, Apr 10 2013, 06:20:15)
 
 <p>After any of these 3 options you should be able to use the python imaging library happily now.</p>
 <p>PS: Thanks everyone for the corrections and suggestions for this post ;)</p></div><!-- /.entry-content -->
-            
-        </div><!-- /.eleven.columns -->
-    </div><!-- /.row -->
+    
 </section>
 
     </div><!-- /.container -->

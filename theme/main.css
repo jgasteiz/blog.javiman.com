@@ -34,16 +34,28 @@ img,
 iframe {
   max-width: 100%; }
 
-.site-name a,
 .entry-title a {
   color: #444;
   text-decoration: none; }
-  .site-name a:visited,
   .entry-title a:visited {
     color: #444; }
-  .site-name a:hover,
   .entry-title a:hover {
     color: #0181EB; }
+
+.site-name {
+  font-size: 42px;
+  font-weight: 300;
+  margin-bottom: 0; }
+  .site-name a,
+  .site-name a:visited {
+    color: #263347;
+    text-decoration: none; }
+
+.site-subtitle {
+  color: #BAC7DA;
+  font-size: 26px;
+  font-weight: 300;
+  margin-top: 0; }
 
 .main-menu {
   border-bottom: 1px solid #DDD;
