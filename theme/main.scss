@@ -1,5 +1,11 @@
+$border-color: #DDD;
+$text-color: #444;
+$link-color: #1863A1;
+$link-color--hover: #0181EB;
+$link-color--visited: #751590;
+
 body {
-    color: #444;
+    color: $text-color;
     font-family: 'PT Serif', Georgia, serif;
     margin: 0 auto;
     max-width: 600px;
@@ -10,18 +16,33 @@ body {
     box-sizing: border-box;
 }
 
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
 a {
-    color: #1863A1;
+    color: $link-color;
     &:hover {
-        color: #0181EB;
+        color: $link-color--hover;
     }
     &:visited {
-        color: #751590;
+        color: $link-color--visited;
     }
 }
 
 p {
     margin: 20px 0;
+}
+
+dt {
+    margin-top: 20px;
+}
+dd {
+    margin-left: 20px;
 }
 
 img,
@@ -31,18 +52,53 @@ iframe {
 
 .site-name a,
 .entry-title a {
-    color: #444;
+    color: $text-color;
     text-decoration: none;
     
     &:visited {
-        color: #444;
+        color: $text-color;
     }
     &:hover {
-        color: #0181EB;
+        color: $link-color--hover;
+    }
+}
+
+.main-menu {
+    border-bottom: 1px solid $border-color;
+    list-style: none;
+    padding: 0 0 10px;
+
+    li {
+        display: inline-block;
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    a {
+        text-decoration: none;
+        &:visited {
+            color: $text-color;
+        }
+        &:hover {
+            color: $link-color--hover;
+        }
     }
 }
 
 .post-list {
     list-style: none;
     padding: 0;
+
+    > li {
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid $border-color;
+    }
+}
+
+.archive-date {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
