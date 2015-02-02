@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Installing PIL on Ubuntu based distributions</title>
+    <meta charset="utf-8" />
+    
+
+    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+    <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="/theme/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/main.css" />
+
+
+</head>
+
+<body class="home">
+
+
+    <div role="main">
+
+        <header id="banner" class="body">
+            <h1 class="site-name">
+                <a href="/">
+                    Fuzzing the Web <strong></strong>
+                </a>
+            </h1>
+        </header><!-- /#banner -->
+
+        <div id="navigation" class="navbar row">
+        <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+
+        <ul class="columns">
+            <li><a href="/">Home</a></li>
+
+            
+            </ul>
+        </div>
+
+<section id="content" class="body">
+
+    <div class="row">
+        <div class="eleven columns">
+            <header>
+                <h2 class="entry-title">
+                    <a 
+                        href="/installing-pil-on-ubuntu-based-distributions.html"
+                        rel="bookmark"
+                        title="Permalink to Installing PIL on Ubuntu based distributions">
+                        Installing PIL on Ubuntu based distributions
+                    </a>
+                </h2>
+            </header>
+            <footer class="post-info">
+                <abbr
+                    class="published"
+                    title="2013-09-26T21:09:00+01:00"
+                    >
+                    Thu 26 September 2013
+                </abbr>
+            </footer><!-- /.post-info -->
+      
+            <div class="entry-content"><p>Today I've been trying to run <a href="https://npmjs.org/package/grunt-glue">grunt-glue</a> in my Elementary OS and after trying to understand why it wasn't running, I realised the JPEG/ZLIB support weren't working.</p>
+<p>It usually happens when you install PIL via pip. To fix the issue, do the following:</p>
+<p>Uninstall PIL from your virtualenv - please, use <a href="https://pypi.python.org/pypi/virtualenv">virtualenv</a>.</p>
+<div class="highlight"><pre>pip uninstall PIL
+</pre></div>
+
+
+<p>Install PIL dependencies - and python-dev, if you don't have it installed.</p>
+<div class="highlight"><pre>sudo apt-get build-dep python-imaging
+sudo apt-get install python-dev
+</pre></div>
+
+
+<p>Create a few symbolic links and install PIL again. When you install PIL, do it with a -U argument to see some output of the installation. I've noticed the sources for 32bit installations would change to <em>i386-linux-gnu</em> instead of <em>x86_64linux-gnu</em>.</p>
+<div class="highlight"><pre>sudo ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib
+sudo ln -s /usr/lib/x86_64-linux-gnu/libfreetype.so /usr/lib
+sudo ln -s /usr/lib/x86_64-linux-gnu/libz.so /usr/lib
+
+pip install -U PIL
+</pre></div>
+
+
+<p>If everything went fine, you shoould see something like this if you scroll up a bit:</p>
+<div class="highlight"><pre>PIL 1.1.7 SETUP SUMMARY
+version       1.1.7
+platform      linux2 2.7.3 (default, Apr 10 2013, 06:20:15)
+              [GCC 4.6.3]
+*** TKINTER support not available
+*** LITTLECMS support not available
+</pre></div>
+
+
+<p>Another option, instead of creating those links manually, would be installing PIL in the machine python installation.</p>
+<div class="highlight"><pre>sudo apt-get install python-imaging
+</pre></div>
+
+
+<p>And another option, although not what you were looking for, would be installing Pillow - which is a better PIL, basically.</p>
+<div class="highlight"><pre>pip install Pillow
+</pre></div>
+
+
+<p>After any of these 3 options you should be able to use the python imaging library happily now.</p>
+<p>PS: Thanks everyone for the corrections and suggestions for this post ;)</p></div><!-- /.entry-content -->
+            
+        </div><!-- /.eleven.columns -->
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+  </ul>
+
+<h4>Categories</h4>
+<ul>
+		<li><a href="/category/books.html">Books</a></li>
+		<li><a href="/category/comic.html">Comic</a></li>
+		<li><a href="/category/internet.html">Internet</a></li>
+		<li><a href="/category/internet-programming.html">["Internet", "Programming"]</a></li>
+		<li><a href="/category/miscellaneous.html">Miscellaneous</a></li>
+		<li><a href="/category/miscellaneous-music.html">["Miscellaneous", "Music"]</a></li>
+		<li><a href="/category/music.html">Music</a></li>
+		<li><a href="/category/music-miscellaneous.html">[Music, Miscellaneous]</a></li>
+		<li><a href="/category/programming.html">Programming</a></li>
+		<li><a href="/category/travel.html">Travel</a></li>
+		<li><a href="/category/travel-miscellaneous.html">[Travel, Miscellaneous]</a></li>
+		<li><a href="/category/travel-music.html">[Travel, Music]</a></li>
+		<li><a href="/category/travel-programming.html">[Travel, Programming]</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+
+
+<nav class="widget">
+  <h4>Social</h4>
+  <ul>
+    <li><a href="#">You can add links in your config file</a></li>
+    <li><a href="#">Another social link</a></li>
+  </ul>
+</nav>
+
+</div>    </div><!-- /.row -->
+</section>
+
+    </div><!-- /.container -->
+
+
+    <footer id="credits" class="row">
+        <p>Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.</p>
+
+        <ul class="socbtns">
+                <li><a href="https://github.com/jgasteiz/" target="_blank">Github</a></li>
+                <li><a href="https://twitter.com/_javiman" target="_blank">Twitter</a></li>
+        </ul>
+    </footer>
+
+</body>
+</html>
