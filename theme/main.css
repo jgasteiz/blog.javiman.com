@@ -15,11 +15,13 @@ h2 {
   font-size: 28px; }
 
 a {
-  color: #1863A1; }
+  color: #2196F3;
+  text-decoration: none; }
   a:hover {
-    color: #0181EB; }
+    color: #3F51B5;
+    text-decoration: underline; }
   a:visited {
-    color: #751590; }
+    color: #673AB7; }
 
 p {
   margin: 20px 0; }
@@ -34,25 +36,23 @@ img,
 iframe {
   max-width: 100%; }
 
-.entry-title a {
-  color: #444;
-  text-decoration: none; }
-  .entry-title a:visited {
+.entry-title a, .main-menu a {
+  color: #444; }
+  .entry-title a:hover, .main-menu a:hover, .entry-title a:visited, .main-menu a:visited {
     color: #444; }
-  .entry-title a:hover {
-    color: #0181EB; }
 
 .site-name {
   font-size: 42px;
   font-weight: 300;
   margin-bottom: 0; }
   .site-name a,
+  .site-name a:hover,
   .site-name a:visited {
-    color: #263347;
+    color: #0D47A1;
     text-decoration: none; }
 
 .site-subtitle {
-  color: #BAC7DA;
+  color: #C5CAE9;
   font-size: 26px;
   font-weight: 300;
   margin-top: 0; }
@@ -66,12 +66,6 @@ iframe {
     margin-right: 10px; }
     .main-menu li:last-child {
       margin-right: 0; }
-  .main-menu a {
-    text-decoration: none; }
-    .main-menu a:visited {
-      color: #444; }
-    .main-menu a:hover {
-      color: #0181EB; }
 
 .post-list {
   list-style: none;
